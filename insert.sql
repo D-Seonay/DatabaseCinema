@@ -45,14 +45,18 @@ INSERT INTO SOUS_GENRE (id_sous_genre, id_genre, details) VALUES
 (1, 1, 'Action aventure'),
 (2, 1, 'Action thriller'),
 (3, 2, 'Comédie romantique'),
-(4, 3, 'Drame psychologique');
+(4, 3, 'Drame psychologique'),
+(5, 3, 'Drame historique'),
+(6, 2, 'Comédie dramatique');
+
 
 -- Données pour la table FILMS
 INSERT INTO FILMS (id_film, titre, annee, duree, id_genre, id_sous_genre, id_nationalite) VALUES
 (1, 'Film 1', 2020, 120, 1, 1, 'FRA'),
 (2, 'Film 2', 2019, 105, 2, 3, 'USA'),
 (3, 'Film 3', 2021, 130, 3, 4, 'GBR'),
-(4, 'Pokémon', 2021, 120, 1, 1, 1, 'FRA');
+(4, 'Pokémon', 2021, 120, 1, 1, 1, 'FRA'),
+(5, 'La comédie dramatique pour les nuls', 2021, 120, 2, 6, 1, 'FRA');
 
 
 -- Données pour la table PRODUCTION
