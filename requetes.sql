@@ -20,6 +20,6 @@ JOIN ADRESSES_SALLES ON SALLES.id_salle = ADRESSES_SALLES.id_salle
 WHERE ADRESSES_SALLES.ville = 'Lille';
 
 -- 5 Donnez la liste des différents genres de films.
-SELECT DISTINCT genre
-FROM GENRES;
+SELECT DISTINCT nom_genre
+FROM GENRE;
 
