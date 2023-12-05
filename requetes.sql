@@ -99,7 +99,6 @@ JOIN GENRE ON SOUS_GENRE.id_genre = GENRE.id_genre
 WHERE nom_genre = 'Comédie' AND id_nationalite = 'FRA';
 
 -- 17 Donnez la liste des nationalités des réalisateurs.
-SELECT DISTINCT id_nationalite
+SELECT DISTINCT INTERVENANTS.id_nationalite
 FROM INTERVENANTS
 JOIN FILMS ON INTERVENANTS.id_intervenant = FILMS.id_film;
-
