@@ -55,8 +55,8 @@ INSERT INTO FILMS (id_film, titre, annee, duree, id_genre, id_sous_genre, id_nat
 (1, 'Film 1', 2020, 120, 1, 1, 'FRA'),
 (2, 'Film 2', 2019, 105, 2, 3, 'USA'),
 (3, 'Film 3', 2021, 130, 3, 4, 'GBR'),
-(4, 'Pokémon', 2021, 120, 1, 1, 1, 'FRA'),
-(5, 'La comédie dramatique pour les nuls', 2021, 120, 2, 6, 1, 'FRA');
+(4, 'Pokémon', 2021, 120, 1, 1, 'FRA'),
+(5, 'La comédie dramatique pour les nuls', 2021, 120, 2, 6, 'FRA');
 
 
 -- Données pour la table PRODUCTION
