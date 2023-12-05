@@ -90,8 +90,10 @@ CREATE TABLE PRODUCTION (
     id_production INT PRIMARY KEY,
     numfilm INT,
     id_nationalite VARCHAR(2),
+    id_intervenant INT,
     FOREIGN KEY (numfilm) REFERENCES FILMS(id_film),
-    FOREIGN KEY (id_nationalite) REFERENCES NATIONALITES(id_nationalite)
+    FOREIGN KEY (id_nationalite) REFERENCES NATIONALITES(id_nationalite),
+    FOREIGN KEY (id_intervenant) REFERENCES INTERVENANTS(id_intervenant)
 );
 
 -- Création de la table RESERVATIONS
