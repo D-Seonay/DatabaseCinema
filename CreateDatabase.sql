@@ -1,3 +1,6 @@
+CREATE DATABASE cinema;
+USE cinema;
+
 -- Création de la table FILMS
 CREATE TABLE FILMS (
     id_film INT PRIMARY KEY,
