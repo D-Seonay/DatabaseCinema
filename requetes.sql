@@ -27,3 +27,8 @@ FROM GENRE;
 SELECT nom, prenom
 FROM ADHERENTS
 WHERE paiement_cotis = 0;
+
+-- 7 Donnez la liste des films dont le titre contient “la”, sans respect de la casse.
+SELECT titre
+FROM FILMS
+WHERE titre ILIKE '%la%';
