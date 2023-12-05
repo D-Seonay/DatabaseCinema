@@ -82,4 +82,7 @@ INSERT INTO MOYENS_PAIEMENT (id_moyen_paiement, nom_moyen_paiement) VALUES
 -- Données pour la table SEANCES (remplissez les détails selon votre besoin)
 INSERT INTO SEANCES (id_seance, numfilm, numsalle, jour, heuredeb) VALUES
 (1, 1, 1, '2023-12-05', '18:00:00'),
-(2, 2, 2, '2023-12-06', '20:00:00');
+(2, 2, 2, '2023-12-06', '20:00:00'),
+(3, 3, 3, '2023-12-07', '22:00:00'),
+(4, 4, 4, '2007-12-20', '19:30:00'),
+(5, 5, 5, '2023-12-09', '20:00:00');
