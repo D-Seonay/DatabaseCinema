@@ -32,7 +32,9 @@ INSERT INTO SALLES (id_salle, nom, id_adresse) VALUES
 INSERT INTO ADRESSES_SALLES (id_salle, adresse, ville, code_postal, pays) VALUES
 (1, '123 Rue B', 'Paris', '75002', 'FR'),
 (2, '789 Main St', 'Los Angeles', '90002', 'US'),
-(3, '456 High St', 'London', 'SW1A 2AA', 'UK');
+(3, '456 High St', 'London', 'SW1A 2AA', 'UK'),
+(4, '456 High St', 'Lille', '59000', 'FR'),
+(5, '456 High St', 'Lille', '59000', 'FR');
 
 -- Données pour la table GENRE
 INSERT INTO GENRE (id_genre, nom_genre) VALUES
