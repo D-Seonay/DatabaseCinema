@@ -16,7 +16,8 @@ INSERT INTO INTERVENANTS (id_intervenant, nom, prenom, id_nationalite, sexe) VAL
 (2, 'Smith', 'John', 'USA', 'M'),
 (3, 'Johnson', 'Emma', 'GBR', 'F'),
 (4, 'Reynolds', 'Ryan', 'CAN', 'M'),
-(5, 'Spielberg', 'Steven', 'USA', 'M');
+(5, 'Spielberg', 'Steven', 'USA', 'M'),
+(6, 'Tautou', 'Audrey', 'FRA', 'F');
 
 -- Données pour la table ADHERENTS
 INSERT INTO ADHERENTS (id_adherent, nom, prenom, adresse, code_postal, ville, paiement_cotis, id_nationalite) VALUES
