@@ -118,3 +118,11 @@ FROM INTERVENANTS
 GROUP BY nom, prenom
 HAVING COUNT(*) > 1;
 
+-- 20 Donnez la liste des films de Spielberg.
+SELECT titre
+FROM FILMS
+JOIN PRODUCTION ON FILMS.id_film = PRODUCTION.numfilm
+JOIN INTERVENANTS ON PRODUCTION.id_production = INTERVENANTS.id_intervenant
+WHERE INTERVENANTS.nom = 'Spielberg';
+
+

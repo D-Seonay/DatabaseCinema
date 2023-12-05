@@ -21,7 +21,9 @@ INSERT INTO INTERVENANTS (id_intervenant, nom, prenom, id_nationalite, sexe) VAL
 INSERT INTO ADHERENTS (id_adherent, nom, prenom, adresse, code_postal, ville, paiement_cotis, id_nationalite) VALUES
 (1, 'Martin', 'Claire', '123 Rue A', '75001', 'Paris', 50.00, 'FRA'),
 (2, 'Johnson', 'Michael', '456 Main St', '90001', 'Los Angeles', 40.00, 'USA'),
-(3, 'Garcia', 'Sophie', '789 High St', 'SW1A 1AA', 'London', 45.00, 'GBR');
+(3, 'Garcia', 'Sophie', '789 High St', 'SW1A 1AA', 'London', 45.00, 'GBR'),
+(4, 'Spielberg', 'Steven', '789 High St', 'SW1A 1AA', 'London', 45.00, 'USA'),
+(5, 'Stephen', 'King', '789 High St', 'SW1A 1AA', 'London', 45.00, 'USA');
 
 -- Données pour la table SALLES
 INSERT INTO SALLES (id_salle, nom, id_adresse) VALUES
