@@ -14,10 +14,10 @@ FROM FILMS
 WHERE id_sous_genre = 3 AND duree < 120;
 
 -- 4 Donnez la liste des salles de Lille.
-SELECT nom_salle
+SELECT ville
 FROM SALLES
-JOIN ADRESSE_SALLE ON SALLES.id_salle = ADRESSE_SALLE.id_salle
-WHERE ADRESSE_SALLE.ville = 'Lille';
+JOIN ADRESSES_SALLES ON SALLES.id_salle = ADRESSES_SALLES.id_salle
+WHERE ADRESSES_SALLES.ville = 'Lille';
 
 -- 5 Donnez la liste des différents genres de films.
 SELECT DISTINCT genre
