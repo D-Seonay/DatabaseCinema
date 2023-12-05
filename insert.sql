@@ -51,7 +51,9 @@ INSERT INTO SOUS_GENRE (id_sous_genre, id_genre, details) VALUES
 INSERT INTO FILMS (id_film, titre, annee, duree, id_genre, id_sous_genre, id_nationalite) VALUES
 (1, 'Film 1', 2020, 120, 1, 1, 'FRA'),
 (2, 'Film 2', 2019, 105, 2, 3, 'USA'),
-(3, 'Film 3', 2021, 130, 3, 4, 'GBR');
+(3, 'Film 3', 2021, 130, 3, 4, 'GBR'),
+(4, 'Pokémon', 2021, 120, 1, 1, 1, 'FRA');
+
 
 -- Données pour la table PRODUCTION
 INSERT INTO PRODUCTION (id_production, numfilm, id_nationalite) VALUES
