@@ -104,9 +104,17 @@ FROM INTERVENANTS
 JOIN FILMS ON INTERVENANTS.id_intervenant = FILMS.id_film;
 
 -- 18 Donnez la liste des films français qui passent à l’UGC.
-SELECT titre
+SELECT FILMS.titre
 FROM FILMS
-JOIN PROJECTION ON FILMS.id_film = PROJECTION.numfilm
-JOIN SALLES ON PROJECTION.id_salle = SALLES.id_salle
-JOIN ADRESSES_SALLES ON SALLES.id_adresse = ADRESSES_SALLES.id_salle
-WHERE id_nationalite = 'FRA' AND ville = 'Lille';
+JOIN PRODUCTION ON FILMS.id_film = PRODUCTION.numfilm
+JOIN SEANCES ON FILMS.id_film = SEANCES.numfilm
+JOIN SALLES ON SEANCES.numsalle = SALLES.id_salle
+WHERE PRODUCTION.id_nationalite = 'FR'
+AND SALLES.nom = 'UGC';
+
+-- 19 Donnez la liste des homonymes parmi les intervenants.
+SELECT nom, prenom
+FROM INTERVENANTS
+GROUP BY nom, prenom
+HAVING COUNT(*) > 1;
+
