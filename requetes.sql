@@ -125,4 +125,11 @@ JOIN PRODUCTION ON FILMS.id_film = PRODUCTION.numfilm
 JOIN INTERVENANTS ON PRODUCTION.id_production = INTERVENANTS.id_intervenant
 WHERE INTERVENANTS.nom = 'Spielberg';
 
+-- 21 Donnez la liste des films dans lesquels joue Audrey Tautou.
+SELECT titre
+FROM FILMS
+JOIN PRODUCTION ON FILMS.id_film = PRODUCTION.numfilm
+JOIN INTERVENANTS ON PRODUCTION.id_production = INTERVENANTS.id_intervenant
+WHERE INTERVENANTS.nom = 'Tautou' AND INTERVENANTS.prenom = 'Audrey';
+
 
