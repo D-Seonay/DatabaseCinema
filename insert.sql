@@ -69,10 +69,12 @@ INSERT INTO FILMS (id_film, titre, annee, duree, id_genre, id_sous_genre, id_nat
 -- Données pour la table PRODUCTION
 INSERT INTO PRODUCTION (id_production, numfilm, id_nationalite, id_intervenant ) VALUES
 (1, 1, 2, 1),
-(2, 2, 1, 2),
+(2, 2, 1, 6),
 (3, 3, 3, 3),
 (4, 4, 1, 4),
-(5, 5, 1, 5);
+(5, 5, 1, 5),
+(6, 5, 2, 5),
+(7, 5, 3, 5);
 
 -- Données pour la table RESERVATIONS (veuillez remplir les données selon votre cas d'utilisation)
 INSERT INTO RESERVATIONS (id_reservation, numadhe, numseance, nbplaces, a_paye, id_moyen_paiement) VALUES
