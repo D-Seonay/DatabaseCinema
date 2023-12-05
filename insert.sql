@@ -5,19 +5,19 @@ INSERT INTO PAYS (id_pays, code_pays, designation) VALUES
 (3, 'UK', 'United Kingdom');
 
 -- Données pour la table NATIONALITES
-INSERT INTO NATIONALITES (id_nationalite, code_nationalite, nom_nationalite, code_pays) VALUES
-(1, 'FRA', 'Française', 'FR'),
-(2, 'USA', 'Américaine', 'US'),
-(3, 'GBR', 'Britannique', 'UK');
+INSERT INTO NATIONALITES (id_nationalite, code_nationalite, nom_nationalite, id_pays) VALUES
+(1, 'FRA', 'Française', 1),
+(2, 'USA', 'Américaine', 2),
+(3, 'GBR', 'Britannique', 3);
 
 -- Données pour la table INTERVENANTS
-INSERT INTO INTERVENANTS (id_intervenant, nom, prenom, code_nationalite, sexe) VALUES
+INSERT INTO INTERVENANTS (id_intervenant, nom, prenom, id_nationalite, sexe) VALUES
 (1, 'Dupont', 'Jean', 'FRA', 'M'),
 (2, 'Smith', 'John', 'USA', 'M'),
 (3, 'Johnson', 'Emma', 'GBR', 'F');
 
 -- Données pour la table ADHERENTS
-INSERT INTO ADHERENTS (id_adherent, nom, prenom, adresse, code_postal, ville, paiement_cotis, code_nationalite) VALUES
+INSERT INTO ADHERENTS (id_adherent, nom, prenom, adresse, code_postal, ville, paiement_cotis, id_nationalite) VALUES
 (1, 'Martin', 'Claire', '123 Rue A', '75001', 'Paris', 50.00, 'FRA'),
 (2, 'Johnson', 'Michael', '456 Main St', '90001', 'Los Angeles', 40.00, 'USA'),
 (3, 'Garcia', 'Sophie', '789 High St', 'SW1A 1AA', 'London', 45.00, 'GBR');
@@ -41,20 +41,36 @@ INSERT INTO GENRE (id_genre, nom_genre) VALUES
 (3, 'Drame');
 
 -- Données pour la table SOUS_GENRE
-INSERT INTO SOUS_GENRE (id_sous_genre, code_genre, details) VALUES
+INSERT INTO SOUS_GENRE (id_sous_genre, id_genre, details) VALUES
 (1, 1, 'Action aventure'),
 (2, 1, 'Action thriller'),
 (3, 2, 'Comédie romantique'),
 (4, 3, 'Drame psychologique');
 
 -- Données pour la table FILMS
-INSERT INTO FILMS (id_film, titre, annee, duree, code_genre, code_sous_genre, code_nationalite) VALUES
+INSERT INTO FILMS (id_film, titre, annee, duree, id_genre, id_sous_genre, id_nationalite) VALUES
 (1, 'Film 1', 2020, 120, 1, 1, 'FRA'),
 (2, 'Film 2', 2019, 105, 2, 3, 'USA'),
 (3, 'Film 3', 2021, 130, 3, 4, 'GBR');
 
--- Données pour la table ACTEURS
-INSERT INTO ACTEURS (numinterv, numfilm) VALUES
-(1, 1),
-(2, 2),
-(3, 3);
+-- Données pour la table PRODUCTION
+INSERT INTO PRODUCTION (id_production, numfilm, id_nationalite) VALUES
+(1, 1, 'FRA'),
+(2, 2, 'USA'),
+(3, 3, 'GBR');
+
+-- Données pour la table RESERVATIONS (veuillez remplir les données selon votre cas d'utilisation)
+INSERT INTO RESERVATIONS (id_reservation, numadhe, numseance, nbplaces, a_paye, id_moyen_paiement) VALUES
+(1, 1, 1, 2, 20.00, 1),
+(2, 2, 2, 3, 30.00, 2);
+
+-- Données pour la table MOYENS_PAIEMENT (ajoutez des méthodes de paiement)
+INSERT INTO MOYENS_PAIEMENT (id_moyen_paiement, nom_moyen_paiement) VALUES
+(1, 'Carte de crédit'),
+(2, 'Espèces'),
+(3, 'Chèque');
+
+-- Données pour la table SEANCES (remplissez les détails selon votre besoin)
+INSERT INTO SEANCES (id_seance, numfilm, numsalle, jour, heuredeb) VALUES
+(1, 1, 1, '2023-12-05', '18:00:00'),
+(2, 2, 2, '2023-12-06', '20:00:00');
