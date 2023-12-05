@@ -23,3 +23,7 @@ WHERE ADRESSES_SALLES.ville = 'Lille';
 SELECT DISTINCT nom_genre
 FROM GENRE;
 
+-- 6 Quels sont les adhérents qui n’ont pas encore payé leur cotisation.
+SELECT nom, prenom
+FROM ADHERENTS
+WHERE paiement_cotis = 0;
