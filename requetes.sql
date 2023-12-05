@@ -102,3 +102,11 @@ WHERE nom_genre = 'Comédie' AND id_nationalite = 'FRA';
 SELECT DISTINCT INTERVENANTS.id_nationalite
 FROM INTERVENANTS
 JOIN FILMS ON INTERVENANTS.id_intervenant = FILMS.id_film;
+
+-- 18 Donnez la liste des films français qui passent à l’UGC.
+SELECT titre
+FROM FILMS
+JOIN PROJECTION ON FILMS.id_film = PROJECTION.numfilm
+JOIN SALLES ON PROJECTION.id_salle = SALLES.id_salle
+JOIN ADRESSES_SALLES ON SALLES.id_adresse = ADRESSES_SALLES.id_salle
+WHERE id_nationalite = 'FRA' AND ville = 'Lille';
