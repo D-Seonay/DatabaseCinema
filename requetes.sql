@@ -31,4 +31,10 @@ WHERE paiement_cotis = 0;
 -- 7 Donnez la liste des films dont le titre contient “la”, sans respect de la casse.
 SELECT titre
 FROM FILMS
-WHERE titre ILIKE '%la%';
+WHERE UPPER(titre) LIKE '%LA%';
+
+-- 8 Quelles sont les intervenants dont la nationalité est autre que française, américaine ou britannique, et dont le nom contient la lettre “R” (sans respect de la casse).
+SELECT *
+FROM INTERVENANTS
+WHERE id_nationalite NOT IN ('FRA', 'USA', 'GBR')
+    AND LOWER(nom) LIKE '%r%';
