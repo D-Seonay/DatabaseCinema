@@ -132,4 +132,78 @@ JOIN PRODUCTION ON FILMS.id_film = PRODUCTION.numfilm
 JOIN INTERVENANTS ON PRODUCTION.id_production = INTERVENANTS.id_intervenant
 WHERE INTERVENANTS.nom = 'Tautou' AND INTERVENANTS.prenom = 'Audrey';
 
+-- 22 Donnez la liste des adhérents ayant réservé pour “Gladiator ”.
+SELECT nom, prenom
+FROM ADHERENTS
+JOIN RESERVATIONS ON ADHERENTS.id_adherent = RESERVATIONS.id_adherent
+JOIN SEANCES ON RESERVATIONS.id_reservation = SEANCES.id_reservation
+JOIN FILMS ON SEANCES.numfilm = FILMS.id_film
+WHERE FILMS.titre = 'Gladiator';
+
+-- 23 Donnez le nombre de personnes ayant effectué une réservation pour une séance à l’UGC.
+SELECT COUNT(*) AS nombre_reservations
+FROM RESERVATIONS
+JOIN SEANCES ON RESERVATIONS.id_reservation = SEANCES.id_reservation
+JOIN SALLES ON SEANCES.numsalle = SALLES.id_salle
+WHERE SALLES.nom = 'UGC';
+
+-- 24 Donnez le nom des réalisateurs ayant plus d’un film stocké dans la base.
+SELECT INTERVENANTS.nom
+FROM INTERVENANTS
+JOIN PRODUCTION ON INTERVENANTS.id_intervenant = PRODUCTION.id_intervenant
+GROUP BY INTERVENANTS.nom
+HAVING COUNT(*) > 1;
+
+-- 25 Donnez la liste des séances ayant lieu au Mélies 2 jours après celles du 19 décembre.
+SELECT *
+FROM SEANCES
+JOIN SALLES ON SEANCES.numsalle = SALLES.id_salle
+WHERE SALLES.nom = 'Mélies'
+AND SEANCES.jour = '2007-12-21';
+
+-- 26 Donnez, avec leur titre, l’heure exacte de début et de fin des films, classés par jour et par heure de début.
+SELECT titre, CONCAT(jour, ' ', heuredeb) AS debut, CONCAT(jour, ' ', heuredeb + INTERVAL duree MINUTE) AS fin
+FROM FILMS
+JOIN SEANCES ON FILMS.id_film = SEANCES.numfilm
+ORDER BY jour, heuredeb;
+
+-- 27 Donnez la liste des couples d’acteurs français (un homme et une femme), sans répétition.
+
+SELECT DISTINCT INTERVENANTS.nom, INTERVENANTS.prenom
+FROM INTERVENANTS
+JOIN PRODUCTION ON INTERVENANTS.id_intervenant = PRODUCTION.id_intervenant
+JOIN FILMS ON PRODUCTION.numfilm = FILMS.id_film
+WHERE INTERVENANTS.sexe = 'F' AND PRODUCTION.id_nationalite = 'FR';
+
+-- 28 Donnez le nombre d’actrices dans les films américains.
+SELECT COUNT(*) AS nombre_actrices
+FROM INTERVENANTS
+JOIN PRODUCTION ON INTERVENANTS.id_intervenant = PRODUCTION.id_intervenant
+JOIN FILMS ON PRODUCTION.numfilm = FILMS.id_film
+WHERE INTERVENANTS.sexe = 'F' AND PRODUCTION.id_nationalite = 'USA';
+
+-- 29 Donnez le nombre de films par catégorie
+SELECT nom_genre, COUNT(*) AS nombre_films
+FROM GENRE
+JOIN FILMS ON GENRE.id_genre = FILMS.id_genre
+GROUP BY nom_genre;
+
+-- 30 Donnez le nombre d’acteurs enregistrés dans la base et intervenant dans le film Ocean’s eleven.
+
+SELECT COUNT(*) AS nombre_acteurs
+FROM INTERVENANTS
+JOIN PRODUCTION ON INTERVENANTS.id_intervenant = PRODUCTION.id_intervenant
+JOIN FILMS ON PRODUCTION.numfilm = FILMS.id_film
+WHERE INTERVENANTS.sexe = 'M' AND FILMS.titre = 'Ocean''s eleven';
+
+-- 31 Les réservations doivent être payées à J-4 au plus tard. Quelle est la date limite de réception des paiements, sous la forme jour/mois/année(4 chiffres) ?
+
+SELECT DATE_SUB(jour, INTERVAL 4 DAY) AS date_limite
+FROM SEANCES;
+
+
+-- 32 Donnez la durée des films en heures et minutes en utilisant des fonctions de conversion chaı̂Rne-date, avec les formats appropriés, pour réaliser la conversion.
+
+SELECT titre, SEC_TO_TIME(duree * 60) AS duree_convertie
+FROM FILMS;
 
